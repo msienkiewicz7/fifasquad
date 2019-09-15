@@ -1,20 +1,36 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
+<link rel="stylesheet" href="/static/css/search_results.css">
 
 <div class="search_results">
   <h2>Search results for '{{ query }}'</h2>
   <table>
 
+    <tr class="header-row">
+      <th></th>
+      <th></th>
+      <th>Nationality</th>
+      <th>Club</th>
+      <th>Age</th>
+      <th></th>
+      <th></th>
+      <th>Overall</th>
+    </tr>
+
     {% for player in players %}
 
-    <tr>
+    <tr class="data-row">
       <!-- <td>{{player.id}}</td> -->
-      <td>{{player.name}}</td>
-      <td>{{player.club}}</td>
-      <td>{{player.nationality}}</td>
-      <td>{{player.age}}</td>
-      <td>{{player.overall}}</td>
+      <td> <img src="{{player.photo}}" alt="Photo"> </td>
+      <td> <p> <span class="player-name">{{player.name}}</span>  <br> {{player.club}} </p></td>
+      <td> <img src="{{player.flag}}" alt="Flag"> </td>
+      <td> <img src="{{player.club_logo}}" alt="Club logo"> </td>
+      <td> <p class="player-age"></p> {{player.age}}</td>
+      <td></td>
+      <td></td>
+      <td> <p class="player-overall">{{player.overall}}</p> </td>
 
     </tr>
 
