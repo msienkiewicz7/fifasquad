@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <!-- <link rel="stylesheet" href="{% static "base.css" %}"> -->
+    <link rel="stylesheet" href="/static/base.css">
+
+
+    <title>FifaSquad</title>
+  </head>
+  <body>
+    <div class="nav-bar">
+      <ul>
+        <li> <a href="/">Home</a> </li>
+        <li> <a href="#">SquadBuilder</a> </li>
+        <li class="search">
+          <form class="" action="{% url 'search_results' %}" method="get">
+            <input type="text" name="q" value="" placeholder="search">
+          </form>
+        </li>
+      </ul>
+
+    </div>
+
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+
+  </body>
+</html>
