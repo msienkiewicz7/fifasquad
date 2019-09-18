@@ -1,34 +1,23 @@
-# TODO
+# Python: Django Application
 
+## Data source
+FIFA 2019 players database: https://www.kaggle.com/karangadiya/fifa19
+
+## App features
+- Search within the database with a text query
+- Display the players that match the search criteria ( the “searchable”
+attributes are: name, club & nationality )
+- Team Builder
+
+## Team Builder
+- Build your team based on your budget given in millions €
+
+Once the budget defined, the tool shows a list of 11 players
+that constitute the best team for this specific budget .
+Best player is defined from their overall score.
+
+## TODO
 - enable search ignoring foregin characters
-
-
-# Python: Getting Started
-
-A barebones Django app, which can easily be deployed to Heroku.
-
-This application supports the [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python) article - check it out.
-
-## Running Locally
-
-Make sure you have Python 3.7 [installed locally](http://install.python-guide.org). To push to Heroku, you'll need to install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), as well as [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
-
-```sh
-$ git clone https://github.com/heroku/python-getting-started.git
-$ cd python-getting-started
-
-$ python3 -m venv getting-started
-$ pip install -r requirements.txt
-
-$ createdb python_getting_started
-
-$ python manage.py migrate
-$ python manage.py collectstatic
-
-$ heroku local
-```
-
-Your app should now be running on [localhost:5000](http://localhost:5000/).
 
 ## Deploying to Heroku
 
