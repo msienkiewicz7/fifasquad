@@ -1,0 +1,28 @@
+{% extends 'squad_builder.html' %}
+
+{% block team %}
+
+<h3>Your budget: {{ budget }}</h3>
+<h4>Budget left: {{ budget_left }}</h4>
+
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Position</th>
+    <th>Value</th>
+    <th>Overall</th>
+  </tr>
+
+  {% for player in team %}
+  <tr>
+    <th>{{player.name}}</th>
+    <th>{{player.position}}</th>
+    <th>{{player.value}}</th>
+    <th>{{player.overall}}</th>
+  </tr>
+  {% endfor %}
+</table>
+
+
+{% endblock %}

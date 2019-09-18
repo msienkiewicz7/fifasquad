@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/css/squad_builder.css">
+<!-- <script src="/static/js/input_seperator.js" charset="utf-8" defer></script> -->
+<script src="/static/js/set_active_formation.js" charset="utf-8" defer></script>
+
+<div class="search-div">
+  <h2>Build your squad</h2>
+  <form action="{% url 'build' %}" id="buildform">
+    <div class="budget-div">
+      <span>€</span>
+      <input type="text" placeholder="budget" name="b" value="{% if budget %}{{ budget }}{% endif %}">
+      <span>Mio.</span>
+    </div>
+    <div class="select-div">
+      <select name="p" form="buildform">
+        <option value="433">4-3-3</option>
+        <option value="442">4-4-2</option>
+        <option value="352">3-5-2</option>
+        <option value="451">4-5-1</option>
+      </select>
+    </div>
+    <div class="submit-div">
+      <input type="submit" value="Build"></button>
+    </div>
+  </form>
+
+
+</div>
+
+{% block team %}
+{% endblock team %}
+
+
+{% endblock content %}
