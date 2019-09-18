@@ -98,4 +98,5 @@ class SquadBuilderView(View):
         budget = '{0:g}'.format(budget / 1000000)
 
 
-        return render(request, 'team.html', {'budget': budget, 'team': team, 'team_value': self.get_team_value(team), 'team_overall': self.get_team_overall(team)})
+        return render(request, 'team.html', {'budget': budget, 'team': team})
+        # return render(request, 'team.html', {'budget': budget, 'team': team, 'team_value': self.get_team_value(team), 'team_overall': self.get_team_overall(team)})

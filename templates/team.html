@@ -33,8 +33,10 @@
 
 </div>
 {% else %}
-
-<h3>Could not build a team for €{{ budget_str }}</h3>
+<div class="info">
+    <h3>€{{ budget }} Mio. is not enough to build a team</h3>
+    <h4>Increase your budget</h4>
+</div>
 
 {% endif %}
 
