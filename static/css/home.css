@@ -31,9 +31,10 @@
 
   font-size: 14px;
 
-
   padding: 10px;
   border: 2px solid black;
+
+  background-color: white;
 }
 
 /* CUSTOM SELECTOR */
