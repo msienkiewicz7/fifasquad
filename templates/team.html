@@ -1,28 +1,42 @@
-{% extends 'squad_builder.html' %}
+{% extends 'home.html' %}
 
 {% block team %}
-
-<h3>Your budget: {{ budget }}</h3>
-<h4>Budget left: {{ budget_left }}</h4>
+<link rel="stylesheet" href="/static/css/team.css">
 
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Position</th>
-    <th>Value</th>
-    <th>Overall</th>
-  </tr>
 
-  {% for player in team %}
-  <tr>
-    <th>{{player.name}}</th>
-    <th>{{player.position}}</th>
-    <th>{{player.value}}</th>
-    <th>{{player.overall}}</th>
-  </tr>
-  {% endfor %}
-</table>
+{% if team %}
+<!-- <h3>Your budget: {{ budget }}</h3> -->
+<!-- <h4>Team value: €{{team_value}} Mio.</h4> -->
+<!-- <h4>Team overall: {{team_overall}}</h4> -->
+<div class="table-div">
+
+  <table>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Value</th>
+      <th>Overall</th>
+    </tr>
+
+    {% for player in team %}
+    <tr>
+      <td> <img src="{{player.photo}}" alt="Photo"> </td>
+      <td> <p class="player-name">{{player.name}}</p></td>
+      <td> <p class="player-position">{{player.position}}</p> </td>
+      <td> <p class="player-value">{{player.value}}</p> </td>
+      <td> <p class="player-overall">{{player.overall}}</p> </td>
+    </tr>
+    {% endfor %}
+  </table>
+
+</div>
+{% else %}
+
+<h3>Could not build a team for €{{ budget_str }}</h3>
+
+{% endif %}
 
 
 {% endblock %}

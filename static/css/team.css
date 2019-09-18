@@ -1,0 +1,10 @@
+.table-div {
+  padding-top: 30px;
+  text-align: center;
+}
+
+.table-div table {
+  width: 500px;
+  margin: 0 auto;
+  /* background-color: yellow; */
+}

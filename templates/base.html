@@ -4,36 +4,16 @@
   <head>
     <meta charset="utf-8">
 
-    <!-- <link rel="stylesheet" href="{% static "base.css" %}"> -->
     <link rel="stylesheet" href="/static/css/base2.css">
     <link rel="shortcut icon" href="http://example.com/favicon.ico">
     <link rel="apple-touch-icon" href="http://example.com/images/apple-touch-icon.png" />
 
-
-
-
     <title>FifaSquad</title>
   </head>
   <body>
-    <!-- <div class="nav-bar">
-      <ul>
-        <li> <a href="/">Home</a> </li>
-        <li> <a href="#">SquadBuilder</a> </li>
-        <li class="search">
-          <form class="search-bar" action="{% url 'search_results' %}" method="get">
-            <input type="text" name="q" value="" placeholder="search">
-            <input type="submit" name="" value="Search">
-            <button type="submit"></button>
-          </form>
-        </li>
-      </ul>
-
-    </div> -->
 
     <div class="topnav">
       <a class="active" href="/">Home</a>
-      <a href="/squadbuilder">Squad Builder</a>
-      <!-- <a href="#contact">Contact</a> -->
       <div class="search-container">
         <form action="{% url 'search_results' %}" method="get">
           <input type="text" placeholder="Search.." name="q">
