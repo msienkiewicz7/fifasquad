@@ -1,6 +1,21 @@
 from django.db import models
+from django.db.models import Q
 
 # Create your models here.
+
+class PlayerSet(models.QuerySet):
+    # find the best player for specific price at spec. position that is not already in team
+    def best_player(self, player_budget, position, team):
+        players_to_exclude = [o.name for o in team]
+        return Player.objects.filter(
+            Q(value__lte = player_budget),
+            Q(position__exact = position),
+            ~Q(value__exact = 0) # ignore free players
+        ).exclude(
+            name__in = players_to_exclude
+        ).order_by('-overall', 'age', '-value'
+        ).first()
+
 
 class Player(models.Model):
     row = models.IntegerField(blank=True, null=True)
@@ -102,7 +117,9 @@ class Player(models.Model):
     class Meta:
         managed = False
         db_table = 'players'
-        ordering = ['-overall', '-value']
+        # ordering = ['-overall', 'age', '-value']
+
+    objects = PlayerSet.as_manager()
 
     def __str__(self):
         return "%s %s" % (self.name, self.position)
