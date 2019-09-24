@@ -102,7 +102,7 @@ class Player(models.Model):
     class Meta:
         managed = False
         db_table = 'players'
-        ordering = ['-overall']
+        ordering = ['-overall', '-value']
 
     def __str__(self):
         return "%s %s" % (self.name, self.position)

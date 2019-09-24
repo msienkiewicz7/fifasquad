@@ -79,6 +79,10 @@ class SquadBuilderView(View):
                     ~Q(value__exact = 0) # Ignore free players
                 )
 
+                str = "%d [0]%s [1]%s [2]%s" % (budget_left/players_left, players[0], players[1], players[2])
+
+                logger.info(str)
+
                 # Select first player from list orderd by overall
                 player = self.get_first_new_player(players, team)
 
